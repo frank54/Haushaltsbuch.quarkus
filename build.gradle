@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    alias(libs.plugins.quarkus)
+}
+
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
+dependencies {
+    implementation enforcedPlatform(libs.quarkus.platform)
+    implementation libs.quarkus.hibernate
+    implementation libs.quarkus.h2
+    implementation libs.quarkus.config
+    implementation libs.quarkus.resteasy
+    implementation libs.quarkus.jackson
+    implementation libs.quarkus.arc
+    testImplementation libs.rest.assured
+    testImplementation libs.quarkus.junit5
+}
+
+group 'de.bagehorn'
+version '1.0.0-SNAPSHOT'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
+}
+
+test {
+    systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+}
+compileJava {
+    options.encoding = 'UTF-8'
+    options.compilerArgs << '-parameters'
+}
+
+compileTestJava {
+    options.encoding = 'UTF-8'
+}
