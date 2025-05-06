@@ -1,5 +1,5 @@
 [versions]
-quarkus = "3.21.1"
+quarkus = "3.22.1"
 rest-assured = "5.5.1"
 
 [libraries]
