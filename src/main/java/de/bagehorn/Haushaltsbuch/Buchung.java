@@ -1,6 +1,7 @@
 package de.bagehorn.Haushaltsbuch;
 
 import com.fasterxml.jackson.annotation.*;
+import org.eclipse.microprofile.config.ConfigProvider;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -37,7 +38,8 @@ public class Buchung {
 
     @JsonGetter("betrag")
     public String getBetragStr() {
-        return betrag.toPlainString() + " SFr";
+        String waehrung = ConfigProvider.getConfig().getValue("buchung.waehrung", String.class);
+        return betrag.toPlainString() + " " + waehrung;
     }
 
     @JsonGetter("buchungsdatum")
