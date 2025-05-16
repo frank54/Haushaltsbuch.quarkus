@@ -1,4 +1,9 @@
 package de.bagehorn.Haushaltsbuch;
 
-public class NativeBuchungResourceTest {
+
+import io.quarkus.test.junit.QuarkusIntegrationTest;
+
+@QuarkusIntegrationTest
+public class NativeBuchungResourceTest extends BuchungResourceTest {
+    // Gleiche Tests, aber in native Mode
 }
