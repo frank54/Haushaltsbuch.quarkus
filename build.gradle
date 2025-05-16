@@ -16,12 +16,13 @@ dependencies {
     implementation libs.quarkus.resteasy
     implementation libs.quarkus.jackson
     implementation libs.quarkus.arc
+    implementation libs.quarkus.docker
     testImplementation libs.rest.assured
     testImplementation libs.quarkus.junit5
 }
 
-group 'de.bagehorn'
-version '1.0.0-SNAPSHOT'
+group = 'de.bagehorn'
+version = '1.0.0-SNAPSHOT'
 
 java {
     sourceCompatibility = JavaVersion.VERSION_17
