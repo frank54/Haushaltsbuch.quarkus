@@ -1,5 +1,7 @@
-package de.bagehorn.Haushaltsbuch;
+package de.bagehorn.Haushaltsbuch.resource;
 
+import de.bagehorn.Haushaltsbuch.repository.BuchungRepository;
+import de.bagehorn.Haushaltsbuch.model.Buchung;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
 import jakarta.ws.rs.Path;

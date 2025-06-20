@@ -1,4 +1,4 @@
-package de.bagehorn.Haushaltsbuch;
+package de.bagehorn.Haushaltsbuch.resource;
 
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;

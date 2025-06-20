@@ -1,9 +1,7 @@
-package de.bagehorn.Haushaltsbuch;
+package de.bagehorn.Haushaltsbuch.model;
 
 import com.fasterxml.jackson.annotation.*;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.eclipse.microprofile.config.ConfigProvider;
 
 import java.math.BigDecimal;
@@ -19,13 +17,17 @@ public class Buchung {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
     @JsonProperty("buchungsdatum")
     private Date datum;
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "kategorie_fk", nullable = false)
+    private Kategorie kategorie;
 
     public Buchung() {}
 
-    public Buchung(final String beschreibung, final BigDecimal betrag, final Date datum) {
+    public Buchung(final String beschreibung, final BigDecimal betrag, final Date datum, final Kategorie kategorie) {
         this.beschreibung = beschreibung;
         this.betrag = betrag;
         this.datum = datum;
+        this.kategorie = kategorie;
     }
 
     @JsonGetter("id")

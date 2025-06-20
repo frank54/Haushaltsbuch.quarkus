@@ -10,9 +10,8 @@ repositories {
 
 dependencies {
     implementation enforcedPlatform(libs.quarkus.platform)
-    implementation libs.quarkus.hibernate
+    implementation libs.quarkus.panache
     implementation libs.quarkus.jdbc
-    implementation libs.quarkus.config
     implementation libs.quarkus.resteasy
     implementation libs.quarkus.jackson
     implementation libs.quarkus.arc

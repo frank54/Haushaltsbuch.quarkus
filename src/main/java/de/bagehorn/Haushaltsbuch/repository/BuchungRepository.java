@@ -1,8 +1,9 @@
-package de.bagehorn.Haushaltsbuch;
+package de.bagehorn.Haushaltsbuch.repository;
 
 import java.util.List;
 import java.util.Optional;
 
+import de.bagehorn.Haushaltsbuch.model.Buchung;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;
