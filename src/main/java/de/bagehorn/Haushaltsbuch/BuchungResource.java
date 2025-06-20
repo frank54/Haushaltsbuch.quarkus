@@ -23,7 +23,7 @@ public class BuchungResource {
     @GET
     public List<Buchung> getBuchungen() {
         logger.info("Alle Buchungen...");
-        return repository.getBuchungen();
+        return repository.findAll();
     }
 
     @GET
@@ -31,13 +31,13 @@ public class BuchungResource {
     @Produces(MediaType.TEXT_PLAIN)
     public int countBuchungen() {
         logger.info("Anzahl der Buchungen...");
-        return repository.getBuchungen().size();
+        return repository.findAll().size();
     }
 
     @GET
     @Path("{id}")
-    public Optional<Buchung> getBuchung(@PathParam("id") int id) {
+    public Optional<Buchung> getBuchung(@PathParam("id") Long id) {
         logger.info("Buchung Nr." + id);
-        return repository.getBuchung(id);
+        return repository.findById(id);
     }
 }

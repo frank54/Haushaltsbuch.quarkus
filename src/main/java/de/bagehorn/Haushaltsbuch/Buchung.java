@@ -1,28 +1,35 @@
 package de.bagehorn.Haushaltsbuch;
 
 import com.fasterxml.jackson.annotation.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 import org.eclipse.microprofile.config.ConfigProvider;
 
 import java.math.BigDecimal;
 import java.util.Date;
 
+@Entity
 public class Buchung {
-    private final int id;
+    @Id
+    @GeneratedValue
+    private Long id;
     private String beschreibung;
     private BigDecimal betrag;
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd", timezone = "CET")
     @JsonProperty("buchungsdatum")
     private Date datum;
 
-    public Buchung(int id, String beschreibung, BigDecimal betrag, Date datum) {
-        this.id = id;
+    public Buchung() {}
+
+    public Buchung(final String beschreibung, final BigDecimal betrag, final Date datum) {
         this.beschreibung = beschreibung;
         this.betrag = betrag;
         this.datum = datum;
     }
 
     @JsonGetter("id")
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
@@ -48,17 +55,17 @@ public class Buchung {
     }
 
     @JsonSetter("beschreibung")
-    public void setBeschreibung(String beschreibung) {
+    public void setBeschreibung(final String beschreibung) {
         this.beschreibung = beschreibung;
     }
 
     @JsonSetter("betrag")
-    public void setBetrag(BigDecimal betrag) {
+    public void setBetrag(final BigDecimal betrag) {
         this.betrag = betrag;
     }
 
     @JsonSetter("buchungsdatum")
-    public void setDatum(Date datum) {
+    public void setDatum(final Date datum) {
         this.datum = datum;
     }
 }
