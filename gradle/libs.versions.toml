@@ -6,7 +6,7 @@ rest-assured = "5.5.1"
 quarkus-platform = { module = "io.quarkus.platform:quarkus-bom", version.ref = "quarkus"}
 quarkus-jdbc = { module = "io.quarkus:quarkus-jdbc-postgresql", version.ref = "quarkus"}
 quarkus-hibernate = { module = "io.quarkus:quarkus-hibernate-orm-panache", version.ref = "quarkus"}
-quarkus-h2 = { module = "io.quarkus:quarkus-jdbc-h2", version.ref = "quarkus"}
+# quarkus-h2 = { module = "io.quarkus:quarkus-jdbc-h2", version.ref = "quarkus"}
 quarkus-config = { module = "io.quarkus:quarkus-config-yaml", version.ref = "quarkus"}
 quarkus-resteasy = { module = "io.quarkus:quarkus-resteasy", version.ref = "quarkus"}
 quarkus-jackson = { module = "io.quarkus:quarkus-resteasy-jackson", version.ref = "quarkus"}
