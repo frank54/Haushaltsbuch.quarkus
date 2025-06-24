@@ -1,9 +1,7 @@
 package de.bagehorn.Haushaltsbuch.resource;
 
-import de.bagehorn.Haushaltsbuch.repository.BuchungRepository;
 import io.quarkus.test.TestTransaction;
 import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
 import jakarta.ws.rs.core.HttpHeaders;
 import jakarta.ws.rs.core.MediaType;
 import org.junit.jupiter.api.Test;
@@ -14,13 +12,11 @@ import static org.hamcrest.CoreMatchers.is;
 
 @QuarkusTest
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class BuchungResourceTest {
-    @Inject
-    BuchungRepository repository;
+class BuchungResourceTest {
 
     @Test
     @TestTransaction
-    public void shouldGetAlleBuchungen() {
+    void shouldGetAlleBuchungen() {
         given()
                 .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON).
         when()
@@ -32,7 +28,7 @@ public class BuchungResourceTest {
 
     @Test
     @TestTransaction
-    public void shouldCountAlleBuchungen() {
+    void shouldCountAlleBuchungen() {
         given()
                 .header(HttpHeaders.ACCEPT, MediaType.TEXT_PLAIN).
                 when()
@@ -44,7 +40,7 @@ public class BuchungResourceTest {
 
     @Test
     @TestTransaction
-    public void shouldGetBuchung() {
+    void shouldGetBuchung() {
         given()
                 .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON)
                 .pathParam("id", 1).
@@ -59,7 +55,7 @@ public class BuchungResourceTest {
 
     @Test
     @TestTransaction
-    public void shouldGetBuchungByKategorie() {
+    void shouldGetBuchungByKategorie() {
         given()
                 .header(HttpHeaders.ACCEPT, MediaType.APPLICATION_JSON)
                 .pathParam("kategorieName","Nahrung / Genuss").
