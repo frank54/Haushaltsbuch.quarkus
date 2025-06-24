@@ -1,23 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Buchungen</title>
-</head>
-<body>
-<table>
+{#include base.html}
+{#title}Buchungen{/title}
+{#body}
+<table class="table">
     <thead>
     <tr>
-        <th>Buchungsdatum</th>
-        <th>Betrag</th>
-        <th>Kategorie</th>
-        <th>Beschreibung</th>
+        <th scope="col">Buchungsdatum</th>
+        <th scope="col">Betrag</th>
+        <th scope="col">Kategorie</th>
+        <th scope="col">Beschreibung</th>
     </tr>
     </thead>
     <tbody>
     {#for buchung in buchungen}
     <tr>
-        <th>{buchung.datum}</th>
+        <th scope="row">{buchung.datum}</th>
         <th>{buchung.getBetragStr()}</th>
         <th>{buchung.kategorie}</th>
         <th>{buchung.beschreibung}</th>
@@ -25,5 +21,5 @@
     {/for}
     </tbody>
 </table>
-</body>
-</html>
+{/body}
+{/include}

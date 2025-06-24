@@ -23,7 +23,7 @@ class BuchungResourceTest {
                 .get("/api/v1/buchung").
         then()
                 .statusCode(200)
-                .body("size()", is(1));
+                .body("size()", is(3));
     }
 
     @Test
@@ -35,7 +35,7 @@ class BuchungResourceTest {
                 .get("/api/v1/buchung/count").
                 then()
                 .statusCode(200)
-                .body(is("1"));
+                .body(is("3"));
     }
 
     @Test
