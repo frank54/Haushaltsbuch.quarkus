@@ -23,4 +23,6 @@ INSERT INTO Kategorie (id, name, beschreibung, typ) VALUES
 (21, 'Anderes', 'Andere Ausgaben, z.B. Geschenke', 'AUSGABEN');
 -- Buchungen
 INSERT INTO Buchung (id, beschreibung, betrag, datum, kategorie_fk) VALUES
-(1, 'Coop', 150.0, '2025-03-31', 8);
+(1, 'Coop', 150.0, '2025-03-31', 8),
+(2, 'Hypothek', 500.0, '2025-02-01', 6),
+(3, 'Hypothek', 500.0, '2025-03-01', 6);

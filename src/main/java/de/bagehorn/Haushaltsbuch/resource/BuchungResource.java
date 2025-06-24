@@ -2,6 +2,7 @@ package de.bagehorn.Haushaltsbuch.resource;
 
 import de.bagehorn.Haushaltsbuch.repository.BuchungRepository;
 import de.bagehorn.Haushaltsbuch.model.Buchung;
+import io.quarkus.panache.common.Sort;
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
 import jakarta.ws.rs.*;
@@ -9,7 +10,6 @@ import jakarta.ws.rs.core.*;
 import org.jboss.logging.Logger;
 
 import java.util.List;
-import java.util.Optional;
 
 @Path("/api/v1/buchung")
 @Produces(MediaType.APPLICATION_JSON)
@@ -34,7 +34,7 @@ public class BuchungResource {
     @GET
     public List<Buchung> getBuchungen() {
         logger.info("Alle Buchungen...");
-        return repository.listAll();
+        return repository.listAll(Sort.descending("datum"));
     }
 
     @GET

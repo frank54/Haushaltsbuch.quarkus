@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buchungen</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>Buchungsdatum</th>
+        <th>Betrag</th>
+        <th>Kategorie</th>
+        <th>Beschreibung</th>
+    </tr>
+    </thead>
+    <tbody>
+    {#for buchung in buchungen}
+    <tr>
+        <th>{buchung.datum}</th>
+        <th>{buchung.getBetragStr()}</th>
+        <th>{buchung.kategorie}</th>
+        <th>{buchung.beschreibung}</th>
+    </tr>
+    {/for}
+    </tbody>
+</table>
+</body>
+</html>
