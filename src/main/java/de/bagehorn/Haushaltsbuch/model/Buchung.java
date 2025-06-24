@@ -19,6 +19,7 @@ public class Buchung {
     private Date datum;
     @ManyToOne(cascade = CascadeType.PERSIST)
     @JoinColumn(name = "kategorie_fk", nullable = false)
+    @JsonProperty("kategorie")
     private Kategorie kategorie;
 
     public Buchung() {}
@@ -70,4 +71,7 @@ public class Buchung {
     public void setDatum(final Date datum) {
         this.datum = datum;
     }
+
+    @JsonGetter("kategorie")
+    public String getKategorie() { return kategorie.name; }
 }
